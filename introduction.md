@@ -198,7 +198,7 @@ Math.floor(Math.random() * 50);
 Math.ceil(Math.random() * 50);
 ```
 
-To see all of the properties and methods on the Math object, take a look at the documentation here.
+To see all of the properties and methods on the Math object, take a look at [the documentation here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
 
 
