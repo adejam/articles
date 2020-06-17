@@ -9,7 +9,7 @@ It is important to distinguish that variables are not values; they contain value
 
 ### ```var```
 
- Before the introduction of ES^ version of javascript, Programmers use the ```var``` keyword to create a variable.
+ Before the introduction of ES6 version of javascript, Programmers use the ```var``` keyword to create a variable.
 
  ```
  var myName = 'Arya';
@@ -17,8 +17,8 @@ It is important to distinguish that variables are not values; they contain value
  ```
 
 ### ```let```
- 
- The ```let``` keyword was introduced in ES6. The ```let``` keyword signals that the variable can be reassigned a different value. 
+
+ The ```let``` keyword was introduced in ES6. The ```let``` keyword signals that the variable can be reassigned a different value.
 
  ```
  let meal = 'Enchiladas';
@@ -28,7 +28,7 @@ It is important to distinguish that variables are not values; they contain value
  ```
 
 #### Similarities of ```var``` and ```let``` keywords
-- Both can be used to declare a variable without assigning the variable a value. In such a case, the variable will be automatically initialized with a value of ```undefined```: 
+- Both can be used to declare a variable without assigning the variable a value. In such a case, the variable will be automatically initialized with a value of ```undefined```:
  ```
  let price;
  console.log(price); // Output: undefined
@@ -198,7 +198,7 @@ console.log(typeof unknown1); // Output: string
 const unknown2 = 10;
 console.log(typeof unknown2); // Output: number
 
-const unknown3 = true; 
+const unknown3 = true;
 console.log(typeof unknown3); // Output: boolean
 ```
 
