@@ -189,6 +189,7 @@ The condition evaluates to ```false``` because the value of the ```numberOfApple
 Truthy and falsy evaluations open a world of short-hand possibilities!
 
 Say i have a website and want to take a user’s username to make a personalized greeting. Sometimes, the user does not have an account, making the ```username``` variable falsy. The code below checks if ```username``` is defined and assigns a default string if it is not:
+
 ```
 let defaultName;
 if (username) {
@@ -211,6 +212,8 @@ Because ```||``` or statements check the left-hand condition first, the variable
 In the spirit of using short-hand syntax, i can use a ternary operator to simplify an ```if...else``` statement.
 
 Take a look at the ```if...else``` statement example:
+
+
 ```
 let isNightTime = true;
 
@@ -222,6 +225,7 @@ if (isNightTime) {
 ```
 
 I can use a ternary operator to perform the same functionality:
+
 
 ```
 isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
@@ -246,6 +250,7 @@ More conditions can be added to the ```if...else``` with an ```else if``` statem
 
 The ```else if``` statement always comes after the ```if``` statement and before the ```else``` statement. The ```else if``` statement also takes a condition. Taking a look at the syntax:
 
+
 ```
 let stopLight = 'yellow';
 
@@ -259,6 +264,8 @@ if (stopLight === 'red') {
   console.log('Caution, unknown!');
 }
 ```
+
+
 The ```else if``` statements allows for multiple possible outcomes. ```if```/```else if```/```else``` statements are read from top to bottom, so the first condition that evaluates to ```true``` from the top to bottom is the block that gets executed.
 
 In the example above, since ```stopLight === 'red'``` evaluates to ```false``` and ```stopLight === 'yellow'``` evaluates to ```true```, the code inside the first ```else if``` statement is executed. The rest of the conditions are not evaluated. If none of the conditions evaluated to ```true```, then the code in the ```else``` statement would have executed.
@@ -267,7 +274,6 @@ In the example above, since ```stopLight === 'red'``` evaluates to ```false``` a
 ## The switch keyword
 
 ```else``` if statements are a great tool if we need to check multiple conditions. In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
-
 
 
 ```
@@ -309,13 +315,13 @@ switch (groceryItem) {
 ```
 
 
--The ```switch``` keyword initiates the statement and is followed by ```( ... )```, which contains the value that each ```case``` will compare. In the example, the value or expression of the ```switch``` statement is ```groceryItem```.
+- The ```switch``` keyword initiates the statement and is followed by ```( ... )```, which contains the value that each ```case``` will compare. In the example, the value or expression of the ```switch``` statement is ```groceryItem```.
 
--Inside the block, ```{ ... }```, there are multiple ```case```s. The ```case``` keyword checks if the expression matches the specified value that comes after it. The value following the first ```case``` is ```'tomato'```. If the value of ```groceryItem``` equalled ```'tomato'```, that ```case```‘s ```console.log()``` would run.
+- Inside the block, ```{ ... }```, there are multiple ```case```s. The ```case``` keyword checks if the expression matches the specified value that comes after it. The value following the first ```case``` is ```'tomato'```. If the value of ```groceryItem``` equalled ```'tomato'```, that ```case```‘s ```console.log()``` would run.
 
--The value of ```groceryItem``` is ```'papaya'```, so the third ```case``` runs— ```Papayas are $1.29``` is logged to the console.
+- The value of ```groceryItem``` is ```'papaya'```, so the third ```case``` runs— ```Papayas are $1.29``` is logged to the console.
 
--The ```break``` keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block.
+- The ```break``` keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block.
 Note: Without the ```break``` keyword at the end of each case, the program would execute the code for all matching cases and the default code as well. This behavior is different from ```if/else``` conditional statements which execute only one block of code.
 
--At the end of each ```switch``` statement, there is a ```default``` statement. If none of the ```case```s are true, then the code in the ```default``` statement will run.
+- At the end of each ```switch``` statement, there is a ```default``` statement. If none of the ```case```s are true, then the code in the ```default``` statement will run.
