@@ -267,6 +267,9 @@ In the example above, since ```stopLight === 'red'``` evaluates to ```false``` a
 ## The switch keyword
 
 ```else``` if statements are a great tool if we need to check multiple conditions. In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
+
+
+
 ```
 let groceryItem = 'papaya';
 
