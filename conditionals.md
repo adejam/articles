@@ -278,9 +278,12 @@ if (groceryItem === 'tomato') {
   console.log('Invalid item');
 }
 ```
+
 In the code above, i have a series of conditions checking for a value that matches a ```groceryItem``` variable. The code works fine, but imagine if i needed to check 100 different values! Having to write that many ```else if``` statements sounds like a pain!
 
 A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+
+
 ```
 let groceryItem = 'papaya';
 
@@ -301,6 +304,8 @@ switch (groceryItem) {
 
 // Prints 'Papayas are $1.29'
 ```
+
+
 -The ```switch``` keyword initiates the statement and is followed by ```( ... )```, which contains the value that each ```case``` will compare. In the example, the value or expression of the ```switch``` statement is ```groceryItem```.
 
 -Inside the block, ```{ ... }```, there are multiple ```case```s. The ```case``` keyword checks if the expression matches the specified value that comes after it. The value following the first ```case``` is ```'tomato'```. If the value of ```groceryItem``` equalled ```'tomato'```, that ```case```‘s ```console.log()``` would run.
