@@ -90,7 +90,7 @@ All comparison statements evaluate to either ```true``` or ```false``` and are m
 - Two values that will be compared.
 - An operator that separates the values and compares them accordingly (```>```, ```<```, ```<=```,```>=```,```===```,```!==```).
 
-# Logical Operators
+##  Logical Operators
 
 In JavaScript, there are operators that work with boolean values(```true``` or ```false```) known as logical operators. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators:
 
@@ -184,6 +184,7 @@ if (numberOfApples){
 
 The condition evaluates to ```false``` because the value of the ```numberOfApples``` is ```0```. Since ```0``` is a falsy value, the code block in the ```else``` statement will run.
 
+
 ## Truthy and Falsy Assignment
 
 Truthy and falsy evaluations open a world of short-hand possibilities!
@@ -271,7 +272,7 @@ The ```else if``` statements allows for multiple possible outcomes. ```if```/```
 In the example above, since ```stopLight === 'red'``` evaluates to ```false``` and ```stopLight === 'yellow'``` evaluates to ```true```, the code inside the first ```else if``` statement is executed. The rest of the conditions are not evaluated. If none of the conditions evaluated to ```true```, then the code in the ```else``` statement would have executed.
 
 
-## The switch keyword
+## The ```switch``` keyword
 
 
 ```else if``` statements are a great tool if i need to check multiple conditions. In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
