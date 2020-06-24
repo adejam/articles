@@ -31,7 +31,7 @@ jkh
 
 Instead of writing out the same code over and over, loops allow computers to repeat a given block of code on its own. One way to give computers these instructions is with a ```for``` loop.
 
-The typical ```fo```r loop includes an iterator variable that usually appears in all three expressions. The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration. Iterator variables can have any name, but it’s best practice to use a descriptive variable name.
+The typical ```for``` loop includes an iterator variable that usually appears in all three expressions. The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration. Iterator variables can have any name, but it’s best practice to use a descriptive variable name.
 
 A ```for``` loop contains three expressions separated by ```;``` inside the parentheses:
 
@@ -115,6 +115,8 @@ Sloth
 Sea Lion
 */
 ```
+
+
 In the loop above, i have named the iterator variable ```i```. This is a variable naming convention is common in a lot of loops. When i use ```i``` to iterate through arrays ```i``` can think of it as being short-hand for the word index. Notice how the stopping condition checks that ```i``` is less than ```animals.length```. Remember that arrays are zero-indexed, the index of the last element of an array is equivalent to the length of that array minus 1. If i tried to access an element at the index of ```animals.length``` i will have gone too far!.
 
 With ```for``` loops, it’s easier to work with elements in arrays.
@@ -132,6 +134,8 @@ I would love to visit Bali
 I would love to visit Paris
 I would love to visit Tulum
 */
+```
+
 
 ## Nested Loops
 
@@ -175,6 +179,7 @@ Output:
 */
 ```
 
+
 ## The While Loop
 
 A ```for``` loop can be converted into a ```while``` loop:
@@ -191,6 +196,7 @@ while (counterTwo < 4) {
   counterTwo++;
 }
 ```
+
 Breaking down what’s happening with the ```while``` loop syntax:
 
 - The ```counterTwo``` variable is declared before the loop. I can access it inside the ```while``` loop since it’s in the global scope.
