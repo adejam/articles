@@ -112,5 +112,5 @@ timeFuncRuntime(() => {
 });
 ```
 
-In this example, i invoked ```timeFuncRuntime()``` with an anonymous function that counts backwards from 10. Anonymous functions can be arguments too!.
+In this example, i invoked ```timeFuncRuntime()``` with an anonymous function that counts backwards from 10. Anonymous functions can be arguments too.
 
