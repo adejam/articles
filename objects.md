@@ -331,3 +331,310 @@ translator: Shauna
 ```
 
 The ```for...in``` will iterate through each element of the ```spaceship.crew``` object. In each iteration, the variable ```crewMember``` is set to one of ```spaceship.crew```‘s keys, enabling logging a list of crew members’ role and ```name```.
+
+
+## The ```this``` Keyword
+
+Objects are collections of related data and functionality. That functionality is stored in methods on the objects:
+
+```
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  }
+};
+```
+
+In the goat object i have a ```.makeSound()``` method. The ```.makeSound()``` method can be invoked on ```goat```.
+
+```
+goat.makeSound(); // Prints baaa
+```
+
+I have a ```goat``` object that can print ```baaa``` to the console. If i wanted to add a new method to the ```goat``` object called ```.diet()``` that prints the ```goat```‘s ```dietType```?
+
+
+```
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(dietType);
+  }
+};
+goat.diet();
+// Output will be "ReferenceError: dietType is not defined"
+```
+
+```dietType``` is not defined even though it’s a property of ```goat``` because inside the scope of the ```.diet()``` method, i don’t automatically have access to other properties of the ```goat``` object.
+
+Here’s where the ```this``` keyword comes to the rescue. If i change the ```.diet()``` method to use the ```this```, the ```.diet()``` works! :
+
+```
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet();
+// Output: herbivore
+```
+
+The ```this``` keyword references the *calling* object which provides access to the calling object’s properties. In the example above, the calling object is ```goat``` and by using ```this``` i am accessing the ```goat``` object itself, and then the ```dietType``` property of ```goat``` by using property dot notation.
+
+
+## Arrow Functions and this
+
+
+For a method, the calling object is the object the method belongs to. If i use the ```this``` keyword in a method then the value of ```this``` is the calling object. However, it becomes a bit more complicated when  using arrow functions for methods. Take a look at the example below:
+
+```
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+```
+
+```goat.diet()``` log ```undefined``` as the ```.diet()``` is defined using an arrow function.
+
+Arrow functions inherently *bind*, or tie, an already defined ```this``` value to the function itself that is NOT the calling object. In the code snippet above, the value of ```this``` is the *global object*, or an object that exists in the global scope, which doesn’t have a ```dietType``` property and therefore returns ```undefined```.
+
+To read more about either arrow functions or the global object check out the MDN documentation of the [
+global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) and [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+The key takeaway from the example above is to **avoid** using arrow functions when using ```this``` in a method!
+
+
+## Privacy
+
+Accessing and updating properties is fundamental in working with objects. However, there are cases in which i don’t want other code simply accessing and updating an object’s properties. When discussing privacy in objects, i define it as the idea that only certain properties should be mutable or able to change in value.
+
+Certain languages have privacy built-in for objects, but JavaScript does not have this feature. Rather, JavaScript developers follow naming conventions that signal to other developers how to interact with a property. One common convention is to place an underscore _ before the name of a property to mean that the property should not be altered. Here’s an example of using _ to prepend a property.
+
+```
+const bankAccount = {
+  _amount: 1000
+}
+```
+
+In the example above, the ```_amount``` is not intended to be directly manipulated.
+
+Even so, it is still possible to reassign ```_amount```:
+
+```
+bankAccount._amount = 1000000;
+```
+
+The use of methods called *getters* and *setters* are used to respect the intention of properties prepended, or began, with ```_```. *Getters* can return the value of internal properties and *setters* can safely reassign property values.
+
+
+
+## Getters
+
+```Getters``` are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property! Taking a look at a getter method:
+
+```
+const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() {
+    if (this._firstName && this._lastName){
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or a last name.';
+    }
+  }
+}
+
+// To call the getter method:
+person.fullName; // 'John Doe'
+```
+
+It is noticeable that in the getter method above:
+
+- I use the ```get``` keyword followed by a function.
+
+- I use an ```if...else``` conditional to check if both ```_firstName``` and ```_lastName``` exist (by making sure they both return truthy values) and then ```return``` a different value depending on the result.
+
+- I can access the calling object’s internal properties using this. In ```fullName```, i am accessing both ```this._firstName``` and ```this._lastName```.
+
+- In the last line i called ```fullName``` on ```person```. In general, getter methods do not need to be called with a set of parentheses. Syntactically, it looks like a property is being accessed.
+
+Some notable advantages of using getter methods:
+
+- Getters can perform an action on the data when getting a property.
+
+- Getters can return different values using conditionals.
+
+- In a getter, the properties of the calling object can be accessed using ```this```.
+
+- The functionality of the code is easier for other developers to understand.
+
+Another thing to keep in mind when using getter (and setter) methods is that properties cannot share the same name as the getter/setter function. If that happens, then calling the method will result in an infinite call stack error. One workaround is to add an underscore before the property name like i did in the example above.
+
+
+## Setters
+
+Along with getter methods, i can also create ```setter``` methods which reassign values of existing properties within an object.
+
+```
+const person = {
+  _age: 37,
+  set age(newAge){
+    if (typeof newAge === 'number'){
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
+    }
+  }
+};
+```
+
+In the example above:
+
+- I can perform a check for what value is being assigned to ```this._age```.
+
+- When i use the setter method, only values that are numbers will reassign ```this._age```.
+
+- There are different outputs depending on what values are used to reassign ```this._age```.
+
+Then to use the setter method:
+
+```
+person.age = 40;
+console.log(person._age); // Logs: 40
+person.age = '40'; // Logs: You must assign a number to age
+```
+
+Setter methods like ```age``` do not need to be called with a set of parentheses. Syntactically, it looks like i am reassigning the value of a property.
+
+Like getter methods, there are similar advantages to using setter methods that include checking input, performing actions on properties, and displaying a clear intention for how the object is supposed to be used. Nonetheless, even with a setter method, it is still possible to directly reassign properties. For example, in the example above, i can still set ```._age``` directly:
+
+```
+person._age = 'forty-five'
+console.log(person._age); // Prints forty-five
+```
+
+## Factory Functions
+
+So far i've been creating objects individually, but there are times where i want to create many instances of an object quickly. Here’s where factory functions come in. A real world factory manufactures multiple copies of an item quickly and on a massive scale. A factory function is a function that returns an object and can be reused to make multiple object instances. Factory functions can also have parameters allowing us to customize the object that gets returned.
+
+Let’s say i wanted to create an object to represent monsters in JavaScript. There are many different types of monsters and i could go about making each monster individually but i can also use a factory function to make it easier. To achieve this diabolical plan of creating multiple monsters objects, i can use a factory function that has parameters:
+
+```
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return {
+    name: name,
+    age: age,
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    }
+  }
+};
+
+```
+
+
+In the ```monsterFactory``` function above, it has four parameters and returns an object that has the properties: ```name```, ```age```, ```energySource```, and ```scare()```. To make an object that represents a specific monster like a ghost, i can call ```monsterFactory``` with the necessary arguments and assign the return value to a variable:
+
+```
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+```
+
+Now i have a ghost object as a result of calling monsterFactory() with the needed arguments. With ```monsterFactory``` in place, i don’t have to create an object literal every time i need a new monster. Instead, i can invoke the ```monsterFactory``` function with the necessary arguments.
+
+
+
+## Property Value Shorthand
+
+
+ES6 introduced some new shortcuts for assigning properties to variables known as *destructuring*.
+
+In the previous exercise, i created a factory function that helped create objects. I had to assign each property a key and value even though the key name was the same as the parameter name i assigned to it. Below is a truncated version of the factory function:
+
+```
+const monsterFactory = (name, age) => {
+  return {
+    name: name,
+    age: age
+  }
+};
+```
+
+Imagine if i had to include more properties, that process would quickly become tedious! But i can use a destructuring technique, called *property value shorthand*, to save myself some keystrokes. The example below works exactly like the example above:
+
+```
+const monsterFactory = (name, age) => {
+  return {
+    name,
+    age
+  }
+};
+```
+
+
+## Destructured Assignment
+
+
+I often want to extract key-value pairs from objects and save them as variables. Take for example the following object:
+
+```
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+
+```
+
+If i wanted to extract the ```residence``` property as a variable, i could use the following code:
+
+```
+const residence = vampire.residence;
+console.log(residence); // Prints 'Transylvania'
+```
+
+However, i can also take advantage of a destructuring technique called ```destructured assignment``` to save ourselves some keystrokes. In destructured assignment i create a variable with the name of an object’s key that is wrapped in curly braces ```{ }``` and assign to it the object. Taking a look at the example below:
+
+```
+const { residence } = vampire;
+console.log(residence); // Prints 'Transylvania'
+```
+
+Look back at the ```vampire``` object’s properties in the first code example. Then, in the example above, i declare a new variable ```residence``` that extracts the value of the ```residence``` property of ```vampire```. When i log the value of residence to the console, ```'Transylvania'``` is printed.
+
+I can even use destructured assignment to grab nested properties of an object:
+
+```
+const { day } = vampire.preferences;
+console.log(day); // Prints 'stay inside'
+```
+
+## Built-in Object Methods
+
+In the previous exercises i've been creating instances of objects that have their own methods. But, i can also take advantage of built-in methods for Objects!
+
+For example, i have access to object instance methods like: ```.hasOwnProperty()```, ```.valueOf()```, and many more at [MDN’s object instance documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods).
+
+There are also useful Object class methods such as ```Object.assign()```, ```Object.entries()```, and ```Object.keys()``` just to name a few. For a comprehensive list, browse: [MDN’s object instance documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods_of_the_Object_constructor).
+
