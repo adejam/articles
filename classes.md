@@ -183,7 +183,7 @@ console.log(bradford.behavior); // Logs 0 to the console
 In the example above, i created two new ```Dog``` instances, ```nikko``` and ```bradford```. Because i increment the behavior of the ```nikko``` instance, but not ```bradford```, accessing ```nikko.behavior``` returns ```1``` and accessing ```bradford.behavior``` returns ```0```.
 
 
-## Inheritance I
+## Inheritance
 
 Imagine my doggy daycare is so successful that i decide to expand the business and open a kitty daycare. Before the daycare opens, i need to create a ```Cat``` class so i can quickly generate ```Cat``` instances. I know that the properties in the ```Cat``` class (```name```, ```behavior```) are similar to the properties in the ```Dog``` class, though, there will be some differences, because of course, cats are not dogs.
 
