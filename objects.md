@@ -1,21 +1,17 @@
 # OBJECTS
 
-In JavaScript, almost "everything" is an object. Many components of the language are actually objects under the hood, and even the parts that aren’t— like strings or numbers— can still act like objects in some instances.
-There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, the code is opened to more complex possibilities. JavaScript objects can be used to model real-world things, like a basketball, or objects can be used to build the data structures that make the web possible.
-
-At their core, JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice.
-
-
+In JavaScript, almost "everything" is an object. JavaScript objects are containers storing related data and functionality.
+There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, the code is opened to more complex possibilities. JavaScript objects can be used to model real-world things, like a phone ehich have properties like color, size, model which in turn have individual values like black, 6', andriod 5.4, or objects can be used to build the data structures that make the web possible.
 
 ## Creating Object Literals
 
-Objects can be assigned to variables just like any JavaScript type. Curly braces ```{}``` are used, to designate an *object literal*:
+Objects can be assigned to variables just like any JavaScript type. Curly braces `{}` are used, to designate an *object literal*:
 
 ```
 let spaceship = {}; // spaceship is an empty object
 ```
 
-An object is filled with unordered data. This data is organized into *key-value pairs*. A key is like a variable name that points to a location in memory that holds a value.
+Objects data are organized into *key-value pairs* which are unordered. A key is like a variable name that points to a location in memory that holds a value.
 
 ![key_value](/images/key_value.svg)
 
