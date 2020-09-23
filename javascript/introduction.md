@@ -1,4 +1,4 @@
-# INTRODUCTION TO JAVASCRIPT
+# LEARNING JAVASCRIPT: BASIC JAVASCRIPT CONCEPTS
 
 The objective of this article is to present an introduction to the Javascript programming language.
 
@@ -202,6 +202,8 @@ Math.floor(Math.random() * 50);
 ```js
 Math.ceil(Math.random() * 50);
 ```
+
+## Suggested Reading
 
 - To see all of the properties and methods on the Math object, take a look at [the documentation here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
