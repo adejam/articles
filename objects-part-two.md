@@ -198,6 +198,7 @@ JavaScript does not have privacy built-in for objects. Rather, developers follow
 const savings = {
   _amount: 1000,
 };
+console.log(savings._amount);//outputs: 1000
 ```
 
 In the example above, the `_amount` is not intended to be directly manipulated.
@@ -205,7 +206,8 @@ In the example above, the `_amount` is not intended to be directly manipulated.
 Even so, it is still possible to reassign `_amount`:
 
 ```js
-bankAccount._amount = 1000000;
+savings._amount = 1000000;
+console.log(savings._amount);//outputs: 1000000
 ```
 
 The use of methods called _getters_ and _setters_ are used to respect the intention of properties prepended, or began, with `_`. _Getters_ can return the value of internal properties and _setters_ can safely reassign property values.
