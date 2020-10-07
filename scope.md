@@ -2,6 +2,14 @@
 
 Scope defines where variables can be accessed or referenced in a program. Some variables can be accessed from anywhere within a program, while other variables may only be available in a specific context.
 
+The article does the following:
+
+- Explain a Block of code
+- Explain Global Scope
+- Explain Block Scope
+- Explain Scope pollution in Javascript.
+- Explain the best practice of Scoping in Javascript.
+
 ## Block
 
 A block is the code enclosed inside a set of curly braces `{}`. Blocks help in grouping one or more statements together and serve as an important structural marker for our code.
