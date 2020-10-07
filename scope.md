@@ -18,7 +18,7 @@ A block of code could be a function, like below:
 
 ```js
 const tellThePeriod = () => {
-  let period = 'morning';
+  let period = "morning";
   console.log(period); // morning
 };
 ```
@@ -29,9 +29,9 @@ When we also observe the block in an `if` statement:
 
 ```js
 if (dusk) {
-  let period = 'evening';
+  let period = "evening";
   console.log(period); // evening
-};
+}
 ```
 
 ## Global Scope
@@ -43,7 +43,7 @@ When a variable is declared outside of blocks, the variable is said to be global
 Taking a look at an example of global scope:
 
 ```js
-const period = 'morning'
+const period = "morning";
 
 const returnPeriod = () => {
   return period; // morning
@@ -55,17 +55,16 @@ console.log(returnPeriod()); // morning
 We can see that even though the `period` variable is defined outside of the block, it can be accessed in the function block, making it a globally scoped variable.
 Therefore, `color` can be accessed within the `returnPeriod` function block.
 
-
 ## Block Scope
 
-A variable defined inside a block is said to be block scoped as it is only accessible to the code within the curly braces `{}`. 
+A variable defined inside a block is said to be block scoped as it is only accessible to the code within the curly braces `{}`.
 Variables that are declared with block scope are known as **"local variables"** because they are only available to the code that is part of the same block.
 
 Taking a example below:
 
 ```js
 const tellThePeriod = () => {
-  let period = 'afternoon';
+  let period = "afternoon";
   console.log(period); // afternoon
 };
 
@@ -74,7 +73,6 @@ console.log(period); // ReferenceError
 ```
 
 We’ll notice that within the function `tellThePeriod`, the `period` variable is only available within the curly braces of the function. When we tried to log the same variable outside the function, we get a `ReferenceError`
-
 
 ## Scope Pollution
 
@@ -96,7 +94,6 @@ const logNumber = () => {
 
 logNumber(); // Prints 157
 console.log(number); // Prints 157
-
 ```
 
 Notice That:
@@ -112,3 +109,6 @@ Notice That:
 With this it is better not to always make every variable to be globally scoped.
 
 Block scoped variables allows defining variables with precision, and not pollute the global namespace hence If a variable does not need to exist outside a block— it shouldn’t!.
+
+For extra reading:
+[W3schools](https://www.w3schools.com/js/js_scope.asp)
