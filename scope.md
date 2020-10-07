@@ -110,5 +110,5 @@ With this it is better not to always make every variable to be globally scoped.
 
 Block scoped variables allows defining variables with precision, and not pollute the global namespace hence If a variable does not need to exist outside a block— it shouldn’t!.
 
-For extra reading:
+## For extra reading:
 [W3schools](https://www.w3schools.com/js/js_scope.asp)
