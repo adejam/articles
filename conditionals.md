@@ -2,6 +2,18 @@
 
 Conditional statements are statements that checks a specific condition(s) and performs a task based on the condition(s).
 
+The article does the following:
+
+- Explain `if` statement.
+- Explain `if...else` statement.
+- Explain comparison operators.
+- Explain logical operators.
+- Explain truthy and falsy.
+- Explain truthy and falsy assignment.
+- Explain ternary operators.
+- Explain `else...if` statements.
+- Explain the `switch` keyword.
+
 ## If Statement
 
 Often a task will performed based on a condition. For example, **If** we’re tired, then we’ll rest. another example is **If** our laptop's battery level is below 10% then we want the laptop to hibernate.
@@ -287,3 +299,9 @@ switch (groceryItem) {
   Note: Without the `break` keyword at the end of each case, the program would execute the code for all matching cases and the default code as well. This behavior is different from `if/else` conditional statements which execute only one block of code.
 
 - At the end of each `switch` statement, there is a `default` statement. If none of the `case`s are true, then the code in the `default` statement will run.
+
+
+## For extra reading
+- [mdn](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
+- [w3schools if and if/else statements](https://www.w3schools.com/js/js_if_else.asp)
+- [w3schools switch statements](https://www.w3schools.com/js/js_switch.asp)
