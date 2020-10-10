@@ -40,7 +40,7 @@ There are two types of code comments in JavaScript:
 ```javascript
 // Prints Jamiu to the console
 console.log(Jamiu);
-console.log(Jamiu);  // Prints Jamiu
+console.log(Jamiu); // Prints Jamiu
 ```
 
 - A multi-line comment will comment out multiple lines and is denoted with `/*` to begin the comment, and `*/` to end the comment.
@@ -57,7 +57,7 @@ console.log(Adeleye);
 This syntax can also be used to comment something out in the middle of a line of code:
 
 ```javascript
-console.log(/*IGNORED!*/ Jamiu);  // Still just prints Jamiu
+console.log(/*IGNORED!*/ Jamiu); // Still just prints Jamiu
 ```
 
 ## Data Types
@@ -78,9 +78,7 @@ Data types are the classifications of the different kinds of data that are used 
 
 - Object: Collections of related data.
 
-
 The first 6 of those types are considered primitive data types. They are the most basic data types in the language. Objects are more complex.
-
 
 ## Arithmetic Operators
 
@@ -96,7 +94,6 @@ An operator is a character that performs a mathematical operational task in our 
 
 - Reminder: `%`
 
-
 ```javascript
 console.log(3 + 4); // Prints 7
 console.log(5 - 1); // Prints 4
@@ -107,7 +104,6 @@ console.log(11 % 3); // Prints 2
 
 The remainder operator, sometimes called modulo, returns the number that remains after the right-hand number divides into the left-hand number as many times as it evenly can: `11 % 3` equals `2` because `3` fits into `11` three times, leaving `2` as the remainder.
 
-
 ## String Concatenation
 
 The process of appending one string to another is called concatenation.
@@ -115,7 +111,7 @@ The process of appending one string to another is called concatenation.
 ```javascript
 console.log('hi' + 'ya'); // Prints 'hiya'
 console.log('wo' + 'ah'); // Prints 'woah'
-console.log('I love to ' + 'code.') // Prints 'I love to code.'
+console.log('I love to ' + 'code.'); // Prints 'I love to code.'
 ```
 
 Just like with regular math, we can combine, or chain, our operations to get a final result:
@@ -153,7 +149,8 @@ Some methods are explained below:
 ```javascript
 console.log('hello'.toUpperCase()); // Prints 'HELLO'
 ```
- `.toUpperCase()` method is called on the string instance `'hello'`. The result is logged to the console. This method returns a string in all capital letters: `'HELLO'`.
+
+`.toUpperCase()` method is called on the string instance `'hello'`. The result is logged to the console. This method returns a string in all capital letters: `'HELLO'`.
 
 - `.startsWith()` method:
 
@@ -165,13 +162,12 @@ console.log('Hey'.startsWith('H')); // Prints true
 
 the `.startsWith()` method is called on the string instance `'Hey`'. This method also accepts the character `'H'` as an input, or argument, between the parentheses. Since the string `'Hey'` does start with the letter `'H'`, the method returns the boolean `true`.
 
-
 - `.trim()` method
- The `.trim()` method is used to remove white spaces at the beginning and end of a string.
+  The `.trim()` method is used to remove white spaces at the beginning and end of a string.
 
- ```js
+```js
 console.log('    Remove whitespace   '.trim());
- ```
+```
 
 ## Built-in Objects
 
@@ -189,7 +185,8 @@ To generate a random number between 0 and 50, we could multiply this result by 5
 ```js
 Math.random() * 50;
 ```
-The example above will likely evaluate to a decimal. To ensure an answer is a whole number, we can take advantage of another useful Math method called ```Math.floor()```.
+
+The example above will likely evaluate to a decimal. To ensure an answer is a whole number, we can take advantage of another useful Math method called `Math.floor()`.
 
 `Math.floor()` takes a decimal number, and rounds down to the nearest whole number. we can use `Math.floor()` to round down a random number like below:
 
