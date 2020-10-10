@@ -18,18 +18,18 @@ A block of code could be a function, like below:
 
 ```js
 const tellThePeriod = () => {
-  let period = "morning";
+  let period = 'morning';
   console.log(period); // morning
 };
 ```
 
-We can Notice that the function body is a block of code.
+We can notice that the function body is a block of code.
 
 When we also observe the block in an `if` statement:
 
 ```js
 if (dusk) {
-  let period = "evening";
+  let period = 'evening';
   console.log(period); // evening
 }
 ```
@@ -43,7 +43,7 @@ When a variable is declared outside of blocks, the variable is said to be global
 Taking a look at an example of a global scope:
 
 ```js
-const period = "morning";
+const period = 'morning';
 
 const returnPeriod = () => {
   return period; // morning
@@ -64,7 +64,7 @@ Taking a example below:
 
 ```js
 const tellThePeriod = () => {
-  let period = "afternoon";
+  let period = 'afternoon';
   console.log(period); // afternoon
 };
 
@@ -106,10 +106,27 @@ Notice That:
 
 - We won’t get an error as reassignment is allowed here, so if we decided to use `number` later on, we’ll be using the new value of `number`.
 
+Another case is declaring a variable with the same name outside and inside of a block like below:
+
+```js
+let number = 77;
+
+const logNumber = () => {
+  let number = 157;
+  console.log(number);
+};
+
+logNumber(); // Prints 157
+console.log(number); // Prints 77
+```
+
+We declared a variable `number` outside and inside of `logNumber()` block. in this case both variables though have the same name are different. Therefore the `number` variable inside of the `logNumber()` would only be available in the block while the one outside will be availabe inside and outside of the block.
+
 With this, it is better not to always make every variable to be globally scoped.
 
 Block scoped variables allow defining variables with precision, and not pollute the global namespace hence If a variable does not need to exist outside a block— it shouldn’t!.
 
 ## For extra reading:
 
-[W3schools](https://www.w3schools.com/js/js_scope.asp)
+- [W3schools](https://www.w3schools.com/js/js_scope.asp)
+- [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
