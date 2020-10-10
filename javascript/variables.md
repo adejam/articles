@@ -19,10 +19,10 @@ The article does the following:
 
 ### `var`
 
-The `var` keyword to create a variable before the introduction of `const` and `let` in ES6.
+The `var` keyword was used in ES5 to create a variable before the introduction of `const` and `let` in ES6.
 
 ```js
-var myName = "Jamiu";
+var myName = 'Jamiu';
 console.log(myName); // Output: Jamiu
 ```
 
@@ -31,9 +31,9 @@ console.log(myName); // Output: Jamiu
 The `let` keyword was introduced in ES6. The `let` keyword is used to declare a variable that can later be reassigned to a different value.
 
 ```js
-let sport = "Soccer";
+let sport = 'Soccer';
 console.log(sport); // Output: Soccer
-sport = "Basketballl";
+sport = 'Basketballl';
 console.log(sport); // Output: Basketball
 ```
 
@@ -44,14 +44,14 @@ console.log(sport); // Output: Basketball
 ```js
 let field;
 console.log(field); // Output: undefined
-field = "javascript";
+field = 'javascript';
 console.log(field); // Output: javascript
 ```
 
 ```js
 var field;
 console.log(field); // Output: undefined
-field = "javascript";
+field = 'javascript';
 console.log(field); // Output: javascript
 ```
 
@@ -72,15 +72,17 @@ if an undeclared variable is logged to the console and later declared with `var`
 ```js
 console.log(num); // output: ReferenceError: x is not defined
 let num = 6;
-console.log(num); //Output: 6
+console.log(num); //The code doesnt reach this line
 ```
+
+Using the `let` keyword the code breaks and doesn't reach the third line.
 
 ### `const`
 
 Just like with `var` and `let` we can store any value in a `const` variable. The way we declare a const variable and assign a value to it follows the same pattern as `let` and `var`.
 
 ```js
-const myName = "Jamiu";
+const myName = 'Jamiu';
 console.log(myName); // Output: Jamiu
 ```
 
@@ -99,7 +101,7 @@ There are rules to keep in mind when naming variables,
 - Variable names are case sensitive, so `myName` and `myname` would be different variables. It is bad practice to create two variables that have the same name using different cases.
 
 - Variable names cannot be the same as keywords. For a comprehensive list of keywords check out [MDN’s keyword documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
-  By [codecademy.com](https://codecademy.com)
+  Retrived from [codecademy.com](https://codecademy.com).
 
 ## Mathematical Assignment Operators
 
@@ -159,25 +161,49 @@ numTwo--;
 console.log(numTwo); // Output: 19
 ```
 
-Like the previous mathematical assignment operators (`+=`, `-=`, `*=`, `/=`), the variable’s value is updated and assigned as the new value of that variable.
+Like the previous mathematical assignment operators (`+=`, `-=`, `*=`, `/=`), the variable’s value is updated and assigned as the new value of that variable. We should note logging `numTwo` directly will not immediately increment it.
+
+```js
+let numTwo = 20;
+console.log(numTwo++); // Output: 20
+```
+
+This is because the `++` coming after the `numTwo` variable doesn't increment the value immediately, as the code means that we are logging the value of `numTwo` first and when we call `numTwo` again on another line the value gets incremented. like below:
+
+```js
+let numTwo = 20;
+console.log(numTwo++); // Output: 20
+console.log(numTwo); // Output: 21
+```
+
+This is also the same for the decremental operator `--` coming after a variable.
+
+The decremental and increamental operator can also come before a variable, the difference doing this as oppose to coming after the variable is that variable is increamented first and then the variable is called.
+
+```js
+let numTwo = 20;
+console.log(++numTwo); // Output: 21
+```
+
+This is also the same for the decremental operator `--` coming before a variable.
 
 ## String Concatenation with Variables
 
 The String Concatenation operator (`+`) can be used to combine two string values even if those values are being stored in variables:
 
 ```js
-let myLanguage = "javascript";
-console.log("I code in " + myLanguage + "."); // Output: 'I code in javascript.'
+let myLanguage = 'javascript';
+console.log('I code in ' + myLanguage + '.'); // Output: 'I code in javascript.'
 ```
 
-In the example above, we assigned the value `javascript` to the `myLanguage` variable. On the second line, the `+` operator is used to combine three strings: `I code in `, then the value saved to `myLanguage`, and `.`.
+In the example above, we assigned the value `javascript` to the `myLanguage` variable. On the second line, the `+` operator is used to combine three strings: `I code in`, then the value saved to `myLanguage`, and `.`.
 
 ## String Interpolation(Template Literals)
 
 Variables can be inserted or interpolated into strings using template literals. example:
 
 ```js
-let myLanguage = "javascript";
+let myLanguage = 'javascript';
 console.log(`I code in ${myLanguage}.`); // Output: 'I code in javascript.'
 ```
 
@@ -197,7 +223,7 @@ The `typeof` operator is used to check the data type of a variable’s value. It
 const tellMeTheType1 = 109;
 console.log(typeof tellMeTheType1); // Output: number
 
-const tellMeTheType2 = "Jamiu";
+const tellMeTheType2 = 'Jamiu';
 console.log(typeof tellMeTheType2); // Output: string
 
 const tellMeTheType3 = true;
@@ -205,5 +231,6 @@ console.log(typeof tellMeTheType3); // Output: boolean
 ```
 
 ## For extra reading:
+
 - [w3schools](https://www.w3schools.com/js/js_variables.asp)
 - [mdn](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
