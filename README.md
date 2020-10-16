@@ -1,4 +1,4 @@
-# learning Javascript
+# ARTICLES
 
 The main objective of this project write articles based on what i learnt studying web development and programming
 
