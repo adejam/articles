@@ -1,0 +1,13 @@
+{
+  "name": "js-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "1.18.2"
+  },
+  "scripts": {
+    "format": "npx prettier  --write **/*.{html,js,json,md,json,yaml,yml,jsx}",
+    "format:check": "npx prettier  --check **/*.{html,js,json,md,json,yaml,yml}"
+  }
+}
