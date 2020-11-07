@@ -7,7 +7,6 @@ The article does the following:
 - Explain How tasks can be manually repeated
 - Explain `For` Loop
 - Explain Looping in reverse
-- Explain how to loop through arrays.
 - Explain nested loops.
 - explain `while` loops.
 - Explain `Do...While` statements.
@@ -211,3 +210,8 @@ Glad I broke out the loop!
 ```
 
 We notice that we were able to break out of the loop even as the stopping condition `i < 99` is still `true`. `break` statements can be especially helpful when looping through large data structures. With `breaks`, we can add test conditions besides the stopping condition, and exit the loop when they’re met.
+
+## For extra reading:
+
+- [W3schools](https://www.w3schools.com/js/js_loop_for.asp)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
