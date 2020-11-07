@@ -1,86 +1,75 @@
 # ARRAYS
 
-Organizing and storing data is a foundational concept of programming.
+Arrays are used to store multiple values in a single variable. Arrays can store any data types (including strings, numbers, and booleans). Arrays are ordered, meaning each item has a numbered position.
 
-One way to organize data in real life is by making lists :
+The article does the following:
 
-```
-New Year's Resolutions:
-1. Keep a journal
-2. Take a falconry class
-3. Learn to juggle
-```
-
-Writing this list in JavaScript, as an array:
-
-```
-let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
-```
-Arrays are JavaScript’s way of making lists. Arrays can store any data types (including strings, numbers, and booleans). Like lists, arrays are ordered, meaning each item has a numbered position.
-
-Here’s an array of the concepts i’ll cover:
+- Explain how to create an array
+- Explain how to access array elements
+- Explain how to update array elements
+- Explain arrays with `let` and `const`
+- Explain array methods like `.length`, `.push`, `.pop`, `.slice` etc.
+- explain arrays and functions.
+- Explain nested arrays.
 
 ## Creating an Array
 
-One way we can create an array is to use an "array literal". An array literal creates an array by wrapping items in square brackets ```[]```. From the previous exercise, arrays can store any data type — i can have an array that holds all the same data types or an array that holds different data types.
+One way we can create an array is to use an "array literal". An array literal creates an array by wrapping items in square brackets `[]`. 
 
-![array_literal](/images/array_literal.svg)
+```js
+const programmingLanguages = ['Javascript', 'PHP', 'Python'];
+```
 
-Let’s take a closer look at the syntax in the array example:
+From the above
 
-- The array is represented by the square brackets ```[]``` and the content inside.
+- The array is represented by the square brackets `[]` and the content inside.
 
 - Each content item inside an array is called an element.
 
-- There are three different elements inside the array.
 
-- Each element inside the array is a different data type.
+Another way to create an Array is using the `Array` keyword.
 
-I can also save an array to a variable. It is noticeable that i did this in the previous exercise:
+```js
+var courses = new Array("Computer science", "biology", "physics");
 ```
-let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
-```
-
 
 ## Accessing Elements
 
 Each element in an array has a numbered position known as its index. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position.
 
-Arrays in JavaScript are zero-indexed, meaning the positions start counting from ```0``` rather than ```1```. Therefore, the first item in an array will be at position ```0```. Let’s see how we could access an element in an array:
+Arrays are ordered, meaning each item has a numbered position known as its index. Arrays in JavaScript are zero-indexed, meaning the positions start counting from `0` rather than `1`. Therefore, the first item in an array will be at position `0`.
 
-![array_indices](/images/array_indices.svg)
-
-In the code snippet above:
-
-- cities is an array that has three elements.
-
-- I am using bracket notation, ```[]``` with the index after the name of the array to access the element.
-
-- ```cities[0]``` will access the element at index ```0``` in the array ```cities```. ```cities[0]``` can be thought of as accessing the space in memory that holds the string ```'New York'```.
-
-I can also access individual characters in a string using bracket notation and the index. For instance, you can write:
-
+```js
+const programmingLanguages = ['Javascript', 'PHP', 'Python'];
+console.log(programmingLanguages[1]);// outputs: PHP
 ```
-const hello = 'Hello World';
-console.log(hello[6]);
-// Output: W
+
+from the code above we use the bracket notation, `[]` with the index after the name of the array to access the element.
+`programmingLanguages[1]` will access the element at index `1` in the array `programmingLanguages` which points to `PHP`. `programmingLanguages[1]` can be thought of as accessing the space in memory that holds the string `'PHP'`.
+
+We can also access individual characters in a string using bracket notation and the index. For instance, We can write:
+
+```js
+const accessMe = 'Access a Letter';
+console.log(accessMe[9]);
+// Output: L
 ```
-The console will display ```W``` since it is the character that is at index ```6```.
+The console will display `L` since it is the character that is at index `9`.
 
 
 ## Update Elements
 
-In the previous exercise, I mentioned how to access elements inside an array or a string by using an index. Once i have access to an element in an array, its value can be updated.
+The value of an array element can be updated Once we have access to the element in an array.
 
+```js
+let programmingLanguages = ['Javascript', 'PHP', 'Python'];
+
+programmingLanguages[2] = 'Java';
+console.log(programmingLanguages);
+//Output: ['Javascript', 'PHP', 'Java']
 ```
-let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
 
-seasons[3] = 'Autumn';
-console.log(seasons);
-//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
-```
-
-In the example above, the ```seasons``` array contained the names of the four seasons.
+In the example above, the `programmingLanguages` array contained three programmes.
 
 However, i decided that i preferred to say ```'Autumn'``` instead of ```'Fall'```.
 
