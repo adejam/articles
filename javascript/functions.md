@@ -7,12 +7,13 @@ The article does the following:
 - Function Declarations.
 - How to call a function.
 - Function parameters and arguments.
-- Default parameters .
+- Default parameters.
 - `return` keyword.
 - Helper functions.
 - Functions expressions.
 - Arrow functions.
 - Concise body arrow function
+- Using functions to solve coding challenges
 
 ## Function Declarations
 
@@ -34,7 +35,7 @@ A function declaration consists of:
 
 A function declaration is a function that is bound to an identifier, or name.
 
-When using a function, we should always be aware of the Javascript hoisting feature which allows access to function declarations before they’re defined.
+When using a function, we should always be aware of the [Javascript hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) feature which allows access to function declarations before they’re defined.
 
 Taking a look at the example of hoisting below:
 
@@ -47,6 +48,16 @@ function greetJamiu() {
 ```
 
 Hoisting allowed `greetJamiu()` to be called before the `greetJamiu()` function was defined! Since hoisting isn’t considered good practice, it is good to be aware of this feature.
+
+We can also determine if a variable is a function by using the `typeof` keyword like below:
+
+```js
+function greetJamiu() {
+  console.log('Hello, Jamiu!');
+}
+
+console.log(typeof greetJamiu); // Output: function
+```
 
 ## Calling a Function
 
@@ -271,6 +282,41 @@ We can refactor the function to:
 ```js
 const sayHello = name => `Hello ${name}`;
 ```
+
+## Using functions to solve coding challenges
+
+Functions with all its rich features can be used to solve coding challenges which will make code reuseable in other instances.
+
+Considering the [simple array sum](https://www.hackerrank.com/challenges/simple-array-sum/problem) coding challenge from [hackerrank.com](https://www.hackerrank.com/) where we have to write a code which will return the sum of all elements in an [array]().
+
+```js
+function simpleArraySum(ar) {
+  let sum = 0;
+  for (let i = 0; i < ar.length; i++) {
+    sum += ar[i];
+  }
+  return sum;
+}
+const firstArrayToSum = [1, 2, 3, 4, 5];
+const secondArrayToSum = [10, 27, 31, 40, 9];
+const thirdArrayToSum = [111, 206, 745, 321, 587];
+
+console.log(simpleArraySum(firstArrayToSum)); // Output: 15
+console.log(simpleArraySum(secondArrayToSum)); // Output: 117
+console.log(simpleArraySum(thirdArrayToSum)); // Output: 1970
+```
+
+From the code above:
+
+- We created a function `simpleArraySum` and in it we initialized a [variable]() `sum` with the `let` keyword to be `0`.
+
+- Then we used a `for` loop to [loop]() through whatever array that is being passed into the function
+
+- In the loop, we add each element of the array to the current value `sum`.
+
+- The we `return` the final value of `sum` which is the summation of all the elements in the array.
+
+It can be noticed that we can reuse this code with whatever array is being passed to the function
 
 ## For Further Reading
 
