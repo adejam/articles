@@ -32,6 +32,18 @@ Another way to create an Array is by using the `Array` keyword.
 var courses = new Array('Computer science', 'biology', 'physics');
 ```
 
+We can also determine if a variable is an array by using the `typeof` keyword like below:
+
+```js
+const programmingLanguages = ['Javascript', 'PHP', 'Python'];
+var courses = new Array('Computer science', 'biology', 'physics');
+
+console.log(typeof programmingLanguages); // Output: object
+console.log(typeof courses); // Output: object
+```
+
+From the above, it can be noted that the data type of arrays is `object`.
+
 ## Accessing Elements
 
 Each element in an array has a numbered position known as its index. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position.
