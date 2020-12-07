@@ -287,7 +287,7 @@ const sayHello = name => `Hello ${name}`;
 
 Functions with all its rich features can be used to solve coding challenges which will make code reuseable in other instances.
 
-Considering the [simple array sum](https://www.hackerrank.com/challenges/simple-array-sum/problem) coding challenge from [hackerrank.com](https://www.hackerrank.com/) where we have to write a code which will return the sum of all elements in an [array]().
+Considering the [simple array sum](https://www.hackerrank.com/challenges/simple-array-sum/problem) coding challenge from [hackerrank.com](https://www.hackerrank.com/) where we have to write a code which will return the sum of all elements in an [array](https://dev.to/adejam/understanding-arrays-in-javascript-4j4b).
 
 ```js
 function simpleArraySum(ar) {
@@ -308,9 +308,9 @@ console.log(simpleArraySum(thirdArrayToSum)); // Output: 1970
 
 From the code above:
 
-- We created a function `simpleArraySum` and in it we initialized a [variable]() `sum` with the `let` keyword to be `0`.
+- We created a function `simpleArraySum` and in it we initialized a [variable](https://dev.to/adejam/understanding-variables-in-javascript-515j) `sum` with the `let` keyword to be `0`.
 
-- Then we used a `for` loop to [loop]() through whatever array that is being passed into the function
+- Then we used a `for` loop to [loop](https://dev.to/adejam/understanding-loops-in-javascript-44od) through whatever array that is being passed into the function
 
 - In the loop, we add each element of the array to the current value `sum`.
 
