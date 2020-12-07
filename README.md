@@ -6,7 +6,6 @@ The project follows the approach of [codecademy](https://www.codecademy.com/) as
 
 This project is being divided into articles or modules for breakdown as easy understanding.
 
-
 ## Published Articles
 
 - [INTRODUCTORY CONCEPTS TO LEARNING JAVASCRIPT](https://dev.to/adejam/javascript-basic-concepts-4c40)
