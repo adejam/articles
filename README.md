@@ -6,6 +6,14 @@ The project follows the approach of [codecademy](https://www.codecademy.com/) as
 
 This project is being divided into articles or modules for breakdown as easy understanding.
 
+## Published Articles
+
+- [INTRODUCTORY CONCEPTS TO LEARNING JAVASCRIPT](https://dev.to/adejam/javascript-basic-concepts-4c40)
+- [Understanding variables in Javascript](https://dev.to/adejam/understanding-variables-in-javascript-515j)
+- [Understanding Scope in Javascript](https://dev.to/adejam/understanding-scope-in-javascript-4b18)
+- [understanding-loops-in-javascript](https://dev.to/adejam/understanding-loops-in-javascript-44od)
+- [understanding-conditional-statements-in-javascript](https://dev.to/adejam/understanding-conditional-statements-in-javascript-3f4p)
+
 ## Development
 
 - Clone the project
